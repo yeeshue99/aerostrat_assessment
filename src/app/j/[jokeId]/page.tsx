@@ -1,4 +1,3 @@
-import { Box } from "@mui/system";
 import { GetJoke } from "../../../../components/API/ApiManager"
 import { notFound } from "next/navigation";
 
