@@ -1,5 +1,6 @@
 import { GetJoke } from "../../../../components/API/ApiManager"
 import { notFound } from "next/navigation";
+import LikeThisJokeButton from "../../../../components/util/LikeThisJokeButton";
 
 export default async function JokePage({ params }: { params: { jokeId: string } }) {
 
@@ -10,5 +11,8 @@ export default async function JokePage({ params }: { params: { jokeId: string } 
 
     return <div>
       {data.joke}
+        <LikeThisJokeButton params={{
+            jokeId: data.id
+        }} />
       </div>
   }

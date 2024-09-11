@@ -3,6 +3,7 @@ import { Box } from "@mui/system";
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
 import MenuIcon from '@mui/icons-material/Menu';
+import Link from 'next/link'
 
 export default function SearchAppBar() {
   return (
@@ -18,14 +19,16 @@ export default function SearchAppBar() {
             >
               <MenuIcon />
             </IconButton>
-            <Typography
-              variant="h6"
-              noWrap
-              component="div"
-              sx={{ marginRight: 4, display: { xs: 'none', sm: 'block' } }}
-            >
-              Aerostrat Dad Joke Generator
-            </Typography>
+              <Typography
+                variant="h6"
+                noWrap
+                component="div"
+                sx={{ marginRight: 4, display: { xs: 'none', sm: 'block' } }}
+              >
+            <Link href="/">
+                Aerostrat Dad Joke Generator
+            </Link>
+              </Typography>
             <Box sx={{paddingLeft: 1, width: "20%", height: "10%", position: "relative", borderRadius: 2, backgroundColor: "rgba(1,1,1,.15)", '&:hover': { backgroundColor: "rgba(1,1,1,.25)" }}}>
               <SearchIcon sx={{ height: '100%', position: 'absolute', pointerEvents: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center',}} />
               <InputBase
