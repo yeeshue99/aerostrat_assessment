@@ -1,5 +1,6 @@
 'use client'
 import { createClient } from '@supabase/supabase-js'
+import { GetJoke } from '../API/ApiManager';
 
 const NEXT_PUBLIC_SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL ?? "";
 const NEXT_PUBLIC_SUPABASE_KEY = process.env.NEXT_PUBLIC_SUPABASE_KEY ?? "";
@@ -41,6 +42,23 @@ export async function GetJokeHits(jokeId: string) {
     else {
         return {hits: 0};
     }
+}
+
+export async function GetJokesByHits() {
+    const data = await supabase
+    .from('hits')
+    .select('joke_id, hits')
+    .order('hits', {ascending: false})
+    .limit(10).then();
+
+    let returnData: any[] = await Promise.all(data?.data!.map((item) => GetJoke(item.joke_id)));
+    for (let i = 0; i < returnData.length; i++) {
+        returnData[i].hits = data?.data![i].hits;
+    }
+
+    console.log(returnData);
+
+    return returnData;
 }
 
 export async function LikeJoke(jokeId: string, previousHits: number) {

@@ -13,11 +13,11 @@ export async function GetJoke(jokeId: string) {
     return data.json()
   }
 
-  export async function GetRandomJoke() {
-    const data = await fetch(process.env.NEXT_PUBLIC_API_URL + '', {
-        ...APPLICATION_HEADERS, 
-        method: "GET",
-    })
+export async function GetRandomJoke() {
+const data = await fetch(process.env.NEXT_PUBLIC_API_URL + '', {
+    ...APPLICATION_HEADERS, 
+    method: "GET",
+})
 
-    return data.json()
-  }
+return data.json()
+}

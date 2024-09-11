@@ -40,7 +40,7 @@ export default function RootLayout({
                 top: "50%", transform: "translate(-50%, -50%)", fontSize: "24px"}}>
                 {children}
               </Box>
-                <RandomJokeButton />
+              <RandomJokeButton />
             </Box>
           </ThemeProvider>
         </AppRouterCacheProvider>
