@@ -1,10 +1,6 @@
 import { Box } from "@mui/system";
 import { GetJoke } from "../../../../components/API/ApiManager"
 
-export async function generateStaticParams() {
-    return [{ jokeId: "404" }];
- }
-
 export default async function JokePage({ params }: { params: { jokeId: string } }) {
 
     const data = await GetJoke(params.jokeId);
