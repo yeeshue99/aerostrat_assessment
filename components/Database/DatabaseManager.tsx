@@ -35,10 +35,8 @@ export async function GetJokeHits(jokeId: string) {
     .select('hits')
     .eq("joke_id", jokeId).then();
 
-    console.log(data.data, data.data?.length)
-
-    if (data.data?.length > 0) {
-        return data.data[0]
+    if (data?.data?.length ?? 0 > 0) {
+        return data!.data![0]
     }
     else {
         return {hits: 0};
