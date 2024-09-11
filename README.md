@@ -1,1 +1,2 @@
 # aerostrat_assessment
+This will be a simple application that uses React to serve dad jokes using an online API. This application does not seem to need a backend, as the API is being served through an external party. 
