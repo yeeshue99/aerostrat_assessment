@@ -46,7 +46,7 @@ export async function GetJokeHits(jokeId: string) {
 }
 
 export async function LikeJoke(jokeId: string, previousHits: number) {
-    const { data, error } = await supabase
+    await supabase
     .from('hits')
     .update({ 'hits': previousHits + 1 })
     .eq('joke_id', jokeId)
