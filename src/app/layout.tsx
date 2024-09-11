@@ -36,8 +36,11 @@ export default function RootLayout({
           <ThemeProvider theme={theme}>
             <SearchAppBar />
             <Box sx={{width: "80%"}}>
-              {children}
-            <RandomJokeButton />
+              <Box sx={{position: "absolute", left: "50%", 
+                top: "50%", transform: "translate(-50%, -50%)", fontSize: "24px"}}>
+                {children}
+              </Box>
+                <RandomJokeButton />
             </Box>
           </ThemeProvider>
         </AppRouterCacheProvider>
