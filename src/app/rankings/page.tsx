@@ -1,11 +1,10 @@
 'use client'
 
 import { GetJokesByHits } from "../../../components/Database/DatabaseManager";
-import { useRouter } from 'next/navigation'
 import { Box } from "@mui/system";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { Button, IconButton, Paper, Table, TableBody, TableCell, TableContainer, TableFooter, TableHead, TablePagination, TableRow } from '@mui/material'
+import { Button, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material'
 
 export default function RankingsPage () {
   const [data, setData] = useState<any[]>([])

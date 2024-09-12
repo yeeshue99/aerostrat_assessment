@@ -5,7 +5,7 @@ import SearchIcon from '@mui/icons-material/Search';
 
 import Link from 'next/link'
 import MenuButton from "./MenuButton";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 export default function SearchAppBar() {
   const router = useRouter();
