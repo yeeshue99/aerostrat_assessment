@@ -11,9 +11,9 @@ export default function RandomJokeButton() {
     }
 
     return (
-        <Button sx={{position: "absolute", right: "10%", bottom: "10%"}} variant="outlined"
+        <Button variant="outlined" sx={{color: "white", marginLeft: "auto", marginRight: "0", width: 190}}
         onClick={handleClick}>
-            Random Joke
+            Open Random Joke
             </Button>
     );
   }

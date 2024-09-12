@@ -7,7 +7,7 @@ export default function ShareTwitterButton ({ params }: { params: { jokeId: stri
 
     return <Tooltip title="Click to copy">
             <Button onClick={() => {navigator.clipboard.writeText(`https://aerostrat-djg.netlify.app/j/${params.jokeId}`)}}variant="outlined" sx={{display: "flex",flexDirection: "row", justifyContent: "center", alignItems: "center", gap: "4px", width:"45%", borderColor: theme.palette.primary.main}}>
-                Copy permalink to clipboard
+                Copy permalink
             </Button>
         </Tooltip>
 }

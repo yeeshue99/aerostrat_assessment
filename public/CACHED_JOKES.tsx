@@ -1,4 +1,4 @@
-const CACHED_JOKES = [
+export const CACHED_JOKES_1 = [
     {
         "id": "0189hNRf2g",
         "joke": "I'm tired of following my dreams. I'm just going to ask them where they are going and meet up with them later."
@@ -41,4 +41,88 @@ const CACHED_JOKES = [
     }
 ]
 
-export default CACHED_JOKES;
+export const CACHED_JOKES_2 = [
+    {
+        "id": "ucxPZDAlGlb",
+        "joke": "If two vegans are having an argument, is it still considered beef?"
+    },
+    {
+        "id": "aFtzPRSnbxc",
+        "joke": "Two fish are in a tank, one turns to the other and says, \"how do you drive this thing?\""
+    },
+    {
+        "id": "PucUS0L6Ed",
+        "joke": "There are two types of people in this world, those who can extrapolate from incomplete data..."
+    },
+    {
+        "id": "1gyI6EIRKBd",
+        "joke": "What do you call two barracuda fish?  A Pairacuda!"
+    },
+    {
+        "id": "It4Etrjiqrc",
+        "joke": "Why does a chicken coop only have two doors? Because if it had four doors it would be a chicken sedan."
+    },
+    {
+        "id": "QKJR79EIYDd",
+        "joke": "What do you call a girl between two posts? Annette."
+    },
+    {
+        "id": "rzs4T0oWgFd",
+        "joke": "Two peanuts were walking down the street. One was a salted."
+    },
+    {
+        "id": "71wsPKeF6h",
+        "joke": "What did the dog say to the two trees? Bark bark."
+    },
+    {
+        "id": "89pzsHtW8pb",
+        "joke": "My boss told me to attach two pieces of wood together... I totally nailed it!"
+    },
+    {
+        "id": "RC51wcNRClb",
+        "joke": "Two dyslexics walk into a bra."
+    }
+]
+
+export const CACHED_JOKES_3 = [
+    {
+        "id": "kqjNmbM7wsc",
+        "joke": "Why do wizards clean their teeth three times a day? To prevent bat breath!"
+    },
+    {
+        "id": "vXgNZ0wcxAd",
+        "joke": "I’m on a whiskey diet. I’ve lost three days already."
+    },
+    {
+        "id": "4wHB51ws4Ed",
+        "joke": "Last night me and my girlfriend watched three DVDs back to back. Luckily I was the one facing the TV."
+    },
+    {
+        "id": "g3LZTCYDYg",
+        "joke": "What do you call a pig with three eyes? Piiig"
+    },
+    {
+        "id": "Im31ozkVnjb",
+        "joke": "A boy dug three holes in the yard. When his mother saw, she exclaimed: \"well, well, well\""
+    },
+    {
+        "id": "7p41Lmbpjqc",
+        "joke": "What has three letters and starts with gas? A Car."
+    },
+    {
+        "id": "HBszX8MJ6h",
+        "joke": "I was so proud when I finished the puzzle in six months, when on the side it said three to four years."
+    },
+    {
+        "id": "X8pWSKJRZg",
+        "joke": "What does a clock do when it's hungry? It goes back four seconds!"
+    },
+    {
+        "id": "HBszX8MJ6h",
+        "joke": "I was so proud when I finished the puzzle in six months, when on the side it said three to four years."
+    },
+    {
+        "id": "It4Etrjiqrc",
+        "joke": "Why does a chicken coop only have two doors? Because if it had four doors it would be a chicken sedan."
+    }
+]

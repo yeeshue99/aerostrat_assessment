@@ -5,7 +5,7 @@ import { SearchJokes } from '../../../components/API/ApiManager'
 import { Box } from '@mui/system'
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
-import { Button, IconButton, Paper, Table, TableBody, TableCell, TableContainer, TableFooter, TableHead, TablePagination, TableRow } from '@mui/material'
+import { Button, IconButton, Paper, styled, Table, TableBody, TableCell, tableCellClasses, TableContainer, TableFooter, TableHead, TablePagination, TableRow } from '@mui/material'
 import FirstPageIcon from '@mui/icons-material/FirstPage';
 import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
@@ -78,6 +78,15 @@ interface TablePaginationActionsProps {
     );
   }
 
+  const StyledTableCell = styled(TableCell)(() => ({
+    [`&.${tableCellClasses.head}`]: {
+      backgroundColor: "#E0B700",
+    },
+    [`&.${tableCellClasses.body}`]: {
+      fontSize: 14,
+    },
+  }));
+
 export default function SearchPage() {
     const [data, setData] = useState<any[]>([])
     const [page, setPage] = useState(0);
@@ -116,8 +125,6 @@ export default function SearchPage() {
 
     const emptyRows = page > 0 ? Math.max(0, (1 + page) * rowsPerPage - data.length) : 0;
 
-    
-
     const handleChangePage = (
         event: React.MouseEvent<HTMLButtonElement> | null,
         newPage: number,
@@ -136,19 +143,19 @@ export default function SearchPage() {
         refresh(page);
     }, [searchParams])
 
-    return <Box sx={{ transformOrigin: "50%, 0%", transform: "translate(-50%, -50%)", position: "absolute" }}>
+    return <Box sx={{ width: "80%", marginLeft: "10%", marginTop: 0.5}}>
      <TableContainer component={Paper}>
       <Table sx={{ minWidth: 1100, minHeight: 720 }} aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell>Joke</TableCell>
+            <StyledTableCell>Joke</StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {(rowsPerPage > 0 ? data.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage) : data).map((row) => (
             <TableRow
               key={row.id}
-              sx={{ '&:nth-child(odd) td, &:nth-child(odd) th': { backgroundColor: "#F2F6FD" } }}
+              sx={{ maxHeight: 32, '&:nth-child(odd) td, &:nth-child(odd) th': { backgroundColor: "#F2F6FD" } }}
             >
               <TableCell sx={{maxHeight: 32}}component="th" scope="row">
                 <Box sx={{maxHeight: 2, maxWidth: 800}}>{row.joke}</Box>
@@ -157,10 +164,17 @@ export default function SearchPage() {
             </TableRow>
           ))}
           {emptyRows > 0 && (
-            <TableRow style={{ height: 53 * emptyRows }}>
+            <TableRow style={{ height: 32 * emptyRows }}>
               <TableCell colSpan={6} />
             </TableRow>
           )}
+          {data.length === 0 && (
+          <TableRow>
+            <TableCell colSpan={5} align='center'>
+                No Jokes Found
+            </TableCell>
+          </TableRow>
+        )}
         </TableBody>
         <TableFooter>
           <TableRow>

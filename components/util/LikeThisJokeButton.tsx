@@ -30,7 +30,7 @@ export default function LikeThisJokeButton ({ params }: { params: { jokeId: stri
         setIsLiked(!isLiked);
     }
 
-    return <Box border="1px solid" color={theme.palette.primary.main} sx={{bottom:0, right: 0, width:"10%", borderRadius: 2, padding: "0 4px 0 4px"}}>
+    return <Box border="1px solid" color={theme.palette.primary.main} sx={{bottom:0, right: 0, width:"20%", borderRadius: 4, padding: "0 4px 0 4px"}}>
                 <Tooltip title="Like this joke to let others know you care!">
                     <Box sx={{display: "flex",flexDirection: "row", justifyContent: "center", alignItems: "center", gap: "4px"}}>
                         <IconButton aria-label="like" color="primary" sx={{display: "inline-block", padding:"8px 0 0 0", margin: "0 auto 0 auto"}} onClick={handleClick}>

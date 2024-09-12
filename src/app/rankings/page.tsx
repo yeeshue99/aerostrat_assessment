@@ -4,7 +4,16 @@ import { GetJokesByHits } from "../../../components/Database/DatabaseManager";
 import { Box } from "@mui/system";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { Button, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material'
+import { Button, Paper, styled, Table, TableBody, TableCell, tableCellClasses, TableContainer, TableHead, TableRow } from '@mui/material'
+
+const StyledTableCell = styled(TableCell)(() => ({
+  [`&.${tableCellClasses.head}`]: {
+    backgroundColor: "#E0B700",
+  },
+  [`&.${tableCellClasses.body}`]: {
+    fontSize: 14,
+  },
+}));
 
 export default function RankingsPage () {
   const [data, setData] = useState<any[]>([])
@@ -14,13 +23,13 @@ export default function RankingsPage () {
   }, [])
   
 
-    return <Box sx={{ transformOrigin: "50%, 0%", transform: "translate(-50%, -50%)", position: "absolute" }}>
+    return <Box sx={{width: "80%", display: "block", margin: "8px auto 0 auto"}}>
     <TableContainer component={Paper}>
      <Table sx={{ minWidth: 1100, minHeight: 720 }} aria-label="simple table">
        <TableHead>
-         <TableRow>
-           <TableCell>Number of Likes</TableCell>
-           <TableCell>Joke</TableCell>
+         <TableRow >
+           <StyledTableCell>Number of Likes</StyledTableCell>
+           <StyledTableCell>Joke</StyledTableCell>
          </TableRow>
        </TableHead>
        <TableBody>

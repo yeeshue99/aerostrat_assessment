@@ -1,14 +1,15 @@
 'use client'
-import { AppBar, InputAdornment, TextField, Toolbar, Typography } from "@mui/material";
+import { AppBar, IconButton, InputAdornment, TextField, Toolbar, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import SearchIcon from '@mui/icons-material/Search';
-
 import Link from 'next/link'
 import MenuButton from "./MenuButton";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 export default function SearchAppBar() {
   const router = useRouter();
+  const [searchTerm, setSearchTerm] = useState("");
   
   const onKeyPress = (e: any) => {
     if (e.key === "Enter") {
@@ -17,9 +18,12 @@ export default function SearchAppBar() {
     }
   }
 
+  const handleOnChange = (e: any) => {
+    setSearchTerm(e.target.value);
+  }
+
   return (
-      <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="static">
+        <AppBar position="static" sx={{backgroundImage: "linear-gradient(to right, #0B00E2 , #00D8FF)"}}>
           <Toolbar>
             <MenuButton />
               <Typography
@@ -32,31 +36,31 @@ export default function SearchAppBar() {
                 Aerostrat Dad Joke Generator
             </Link>
               </Typography>
-            <Box sx={{paddingLeft: 1, width: "20%", height: "10%", position: "relative", }}>
+            <Box sx={{paddingLeft: 1, width: "20%", height: "10%", position: "relative", input: {color: "white",
+              "&::placeholder": {    // <----- Add this.
+            opacity: 1, color: "white"
+         }
+            }}}>
               {/* <SearchIcon sx={{ height: '100%', position: 'absolute', pointerEvents: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center',}} /> */}
               <TextField
                 variant="outlined"
                 placeholder="Search…"
-                sx={{color: 'white',
-                  width: '100%', height: "80%", 
-                  '& .MuiInputBase-input': {
-                    padding: "1 1 1 0",
-                    color: "white",
-                    // vertical padding + font size from searchIcon
-                    paddingLeft: 4,
-                  },}}
                 slotProps={{input: {
                   startAdornment: (
                     <InputAdornment position="start">
-                      <SearchIcon sx={{color: "white"}}/>
+                      <IconButton sx={{width: 24, height: 24}}>
+                        <Link style={{width: 24, height: 24}} href={`/search/?term=${searchTerm}`}>
+                          <SearchIcon sx={{color: "white"}}/>
+                        </Link>
+                      </IconButton>
                     </InputAdornment>
                   ),
                 }}}
                 onKeyDown={onKeyPress}
+                onChange={handleOnChange}
               />
             </Box>
           </Toolbar>
         </AppBar>
-      </Box>
   );
 }

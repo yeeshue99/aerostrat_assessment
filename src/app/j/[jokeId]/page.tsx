@@ -5,15 +5,19 @@ import { Card, CardActions, CardContent, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import CopyLinkButton from "../../../../components/util/CopyLinkButton";
 import ShareTwitterButton from "../../../../components/util/ShareTwitterButton";
+import { useState } from "react";
 
-export default async function JokePage({ params }: { params: { jokeId: string } }) {
+export default function JokePage({ params }: { params: { jokeId: string } }) {
+  const [data, setData] = useState<any>({});
 
-    const data = await GetJoke(params.jokeId);
-    if (!data.joke) {
-        notFound();
-    }
+    GetJoke(params.jokeId).then((res) => {
+      if (!res.joke) {
+          notFound();
+      }
+      setData(res);
+    });
 
-    return <Box sx={{top: 0, transform: "translate(0%, -25%)", minWidth: "512px"}}>
+    return <Box sx={{width: "512px", display: "block", margin: "10% auto 0 auto"}}>
       <Card variant="outlined" sx={{ minWidth: "512px" }}>
         <CardContent>
           <Typography gutterBottom sx={{ color: 'text.secondary', fontSize: 32, textAlign: "center" }}>

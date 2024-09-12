@@ -4,9 +4,7 @@ import "./globals.css";
 import SearchAppBar from "../../components/Header/SearchAppBar";
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
 import { ThemeProvider } from '@mui/material/styles';
-import RandomJokeButton from "../../components/util/RandomJokeButton";
 import theme from '../theme';
-import { Box } from "@mui/system";
 import Footer from "../../components/Footer/Footer";
 
 const geistSans = localFont({
@@ -36,13 +34,7 @@ export default function RootLayout({
         <AppRouterCacheProvider>
           <ThemeProvider theme={theme}>
             <SearchAppBar />
-            <Box sx={{width: "80%"}}>
-              <Box sx={{position: "absolute", left: "50%", 
-                top: "50%", transform: "translate(-50%, -50%)", fontSize: "24px"}}>
                 {children}
-              </Box>
-              <RandomJokeButton />
-            </Box>
             <Footer />
           </ThemeProvider>
         </AppRouterCacheProvider>
