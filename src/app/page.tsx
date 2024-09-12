@@ -35,6 +35,9 @@ export default function Home() {
                 API: 
                 <Link href="https://icanhazdadjoke.com/">https://icanhazdadjoke.com/</Link>
               </ListItem>
+              <ListItem>
+                Deployment: Netlify
+              </ListItem>
             </List>
             <List sx={{width: "50%", textAlign: "right"}} subheader={
               <ListSubheader sx={{fontSize: 24}} component="div" id="nested-list-subheader">
