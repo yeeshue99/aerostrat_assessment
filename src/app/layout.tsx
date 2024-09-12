@@ -7,6 +7,8 @@ import { ThemeProvider } from '@mui/material/styles';
 import RandomJokeButton from "../../components/util/RandomJokeButton";
 import theme from '../theme';
 import { Box } from "@mui/system";
+import { AppBar, Toolbar } from "@mui/material";
+import Footer from "../../components/Footer/Footer";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -42,6 +44,7 @@ export default function RootLayout({
               </Box>
               <RandomJokeButton />
             </Box>
+            <Footer />
           </ThemeProvider>
         </AppRouterCacheProvider>
       </body>

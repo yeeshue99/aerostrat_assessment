@@ -11,7 +11,7 @@ export default function HomeCarousel () {
     function Item(props: any)
     {
         return (
-            <Card variant="outlined" sx={{width: "80%", height: "128px", margin: "auto"}}>
+            <Card variant="outlined" sx={{width: "100%", height: "128px", margin: "auto"}}>
                 <CardContent>
                     <Typography >
                         {props.item.joke}
@@ -32,8 +32,8 @@ export default function HomeCarousel () {
         router.push(`/j/${jokeId}`);
     }
 
-return <Box sx={{width: "100%", height: "128px", marginTop: 4}}>
-            <Carousel>
+return <Box sx={{width: "100%", height: "128px", marginTop: 8}}>
+            <Carousel interval={3000} animation="slide" duration={1000}>
                 {CACHED_JOKES.map((joke, i) => <Item key={i} item={joke}/>)}
             </Carousel>
         </Box>

@@ -25,7 +25,7 @@ export default function MenuButton () {
             </IconButton>
             <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
                 <Link href="/j/random"><MenuItem onClick={handleClose}>Random Dad Joke</MenuItem></Link>
-                <Link href="/j/rankings"><MenuItem onClick={handleClose}>Joke Rankings</MenuItem></Link>
+                <Link href="/rankings"><MenuItem onClick={handleClose}>Joke Rankings</MenuItem></Link>
             </Menu>
         </div>
     

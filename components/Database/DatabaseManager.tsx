@@ -51,12 +51,10 @@ export async function GetJokesByHits() {
     .order('hits', {ascending: false})
     .limit(10).then();
 
-    let returnData: any[] = await Promise.all(data?.data!.map((item) => GetJoke(item.joke_id)));
+    const returnData: any[] = await Promise.all(data?.data!.map((item) => GetJoke(item.joke_id)));
     for (let i = 0; i < returnData.length; i++) {
         returnData[i].hits = data?.data![i].hits;
     }
-
-    console.log(returnData);
 
     return returnData;
 }
