@@ -18,7 +18,7 @@ export default function LikeThisJokeButton ({ params }: { params: { jokeId: stri
         })();
         ( async () => {
             return GetJokeHits(params.jokeId);
-        })().then((result) => {setJokeHits(result.hits)});
+        })().then((result) => {if (result.hits === -1 ) return; setJokeHits(Math.max(result.hits, jokeHits))});
     }, [params.jokeId])
 
     function handleClick () {

@@ -9,7 +9,7 @@ export default function ShareTwitterButton ({ params }: { params: { jokeId: stri
     
     return <Tooltip title="Share this on Twitter!">
             <Button variant="outlined" sx={{display: "flex",flexDirection: "row", justifyContent: "center", alignItems: "center", gap: "4px", width:"45%", borderColor: theme.palette.primary.main }}>
-                <Link href={`https://twitter.com/intent/tweet?url=https://aerostrat-djg.netlify.app%2Fj%2F${params.jokeId}&text=Check+out+this+%23dadjoke&via=AerostratSW`}>
+                <Link target="_blank" href={`https://twitter.com/intent/tweet?url=https://aerostrat-djg.netlify.app%2Fj%2F${params.jokeId}&text=Check+out+this+%23dadjoke&via=AerostratSW`}>
                     Share on Twitter
                 </Link>
             </Button>

@@ -37,10 +37,11 @@ export async function GetJokeHits(jokeId: string) {
     .eq("joke_id", jokeId).then();
 
     if (data?.data?.length ?? 0 > 0) {
+        console.log(data!.data![0]);
         return data!.data![0]
     }
     else {
-        return {hits: 0};
+        return {hits: -1};
     }
 }
 
