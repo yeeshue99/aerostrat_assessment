@@ -1,3 +1,5 @@
+'use client'
+
 import { GetJoke } from "../../../../components/API/ApiManager"
 import { notFound } from "next/navigation";
 import LikeThisJokeButton from "../../../../components/util/LikeThisJokeButton";
