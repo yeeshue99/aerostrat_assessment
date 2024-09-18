@@ -13,7 +13,7 @@ export default function Home() {
           </Typography>
           <HomeCarousel />
         </Box>
-        <Box sx={{height: 500, margin: "auto", width: "50%"}}>
+        <Box sx={{height: 300, margin: "auto", width: "50%"}}>
           <Typography sx={{fontSize: 32, textAlign: "center"}}>
             This page was created by Michael Ngo for <Link href="https://aerostratsoftware.com/">Aerostrat Software</Link>
           </Typography>
